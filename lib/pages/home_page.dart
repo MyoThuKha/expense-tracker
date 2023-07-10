@@ -4,6 +4,7 @@ import 'package:expense_tracker/utilities/currency.dart';
 import 'package:expense_tracker/utilities/screen_size.dart';
 import 'package:expense_tracker/widgets/list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,11 +22,17 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: false,
         actions: [
+          // IconButton(
+          //     onPressed: () {
+          //       Navigator.pushNamed(context, SettingPage.routeName);
+          //     },
+          //     icon: const Icon(Icons.settings_outlined)),
           IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, SettingPage.routeName);
               },
-              icon: const Icon(Icons.settings_outlined)),
+            icon: const Icon(Icons.notifications_outlined),
+          ),
         ],
       ),
       body: Column(

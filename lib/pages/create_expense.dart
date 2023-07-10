@@ -1,3 +1,5 @@
+import 'package:expense_tracker/controller/create.dart';
+import 'package:expense_tracker/models/currency_model.dart';
 import 'package:flutter/material.dart';
 
 class CreateExpensePage extends StatefulWidget {
@@ -8,7 +10,15 @@ class CreateExpensePage extends StatefulWidget {
 }
 
 class _CreateExpensePageState extends State<CreateExpensePage> {
-  List selectedItems = [];
+  late CurrencyListModel selectedItems;
+
+  @override
+  void initState() {
+    super.initState();
+    final CreateExpense expense = CreateExpense();
+    selectedItems = expense.getAllCurrency();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

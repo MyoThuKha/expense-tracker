@@ -1,11 +1,15 @@
 import 'package:expense_tracker/pages/create_expense.dart';
 import 'package:expense_tracker/pages/setting_page.dart';
 import 'package:expense_tracker/pages/splash_page.dart';
+import 'package:expense_tracker/utilities/const.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
 import 'pages/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Hive.openBox(mainDB);
   runApp(const MyApp());
 }
 
@@ -25,8 +29,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/splash": (context) => const Splash(),
         "/home": (context) => const HomePage(),
-        "/create": (context)=> const CreateExpensePage(),
-        SettingPage.routeName: (context)=> const SettingPage(),
+        "/create": (context) => const CreateExpensePage(),
+        SettingPage.routeName: (context) => const SettingPage(),
       },
     );
   }
